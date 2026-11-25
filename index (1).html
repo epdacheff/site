@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>Gördüğün her linke tıklama</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+
+<!-- Elle çizilmiş kenar efekti (CSS'ten kullanılıyor, görünmez) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="rough" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<!-- ================= AÇILIŞ ================= -->
+<div id="intro">
+  <div id="scene">
+    <div class="floor"></div>
+    <h1 class="sr">GÖRDÜĞÜN HER LİNKE TIKLAMA!</h1>
+
+    <div class="rig">
+      <div class="shadow"></div>
+      <div class="fly"><div class="tilt"><div class="flip">
+        <i class="edge" style="transform:translateZ(-2px)"></i>
+        <i class="edge" style="transform:translateZ(0);background:#8d8d90"></i>
+        <i class="edge" style="transform:translateZ(2px)"></i>
+
+        <!-- ÜST YÜZ: siyah grip tape -->
+        <div class="face top">
+          <svg viewBox="0 0 400 128" aria-hidden="true">
+            <defs>
+              <pattern id="grit" width="4" height="4" patternUnits="userSpaceOnUse">
+                <circle cx="1" cy="1" r=".8" fill="#2c2c2f"/><circle cx="3" cy="3" r=".7" fill="#1f1f21"/>
+              </pattern>
+            </defs>
+            <rect x="2" y="14" width="396" height="100" rx="46" ry="50" fill="#0b0b0c" stroke="#6b6b6e" stroke-width="3"/>
+            <rect x="2" y="14" width="396" height="100" rx="46" ry="50" fill="url(#grit)"/>
+            <path d="M60 20Q46 64 60 108M340 20Q354 64 340 108" fill="none" stroke="#3a3a3d" stroke-width="2"/>
+            <g fill="#8b8b8f">
+              <circle cx="83" cy="53" r="2"/><circle cx="107" cy="53" r="2"/><circle cx="83" cy="75" r="2"/><circle cx="107" cy="75" r="2"/>
+              <circle cx="293" cy="53" r="2"/><circle cx="317" cy="53" r="2"/><circle cx="293" cy="75" r="2"/><circle cx="317" cy="75" r="2"/>
+            </g>
+            <path d="M150 40l60 5M240 92l40-6M170 88l22 3" stroke="#303033" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- ALT YÜZ: deck + truck + tekerlek + graffiti -->
+        <div class="face bottom">
+          <svg viewBox="0 0 400 128" aria-hidden="true">
+            <defs>
+              <clipPath id="dk"><rect x="2" y="14" width="396" height="100" rx="46" ry="50"/></clipPath>
+              <g id="trk">
+                <rect x="78" y="48" width="34" height="32" rx="4" fill="#a3a3a7" stroke="#0b0b0c" stroke-width="2"/>
+                <circle cx="83" cy="53" r="2.2" fill="#333"/><circle cx="107" cy="53" r="2.2" fill="#333"/>
+                <circle cx="83" cy="75" r="2.2" fill="#333"/><circle cx="107" cy="75" r="2.2" fill="#333"/>
+                <rect x="87" y="20" width="16" height="88" rx="6" fill="#8b8b8f" stroke="#0b0b0c" stroke-width="2"/>
+                <circle cx="95" cy="64" r="7" fill="#5d5d61" stroke="#0b0b0c" stroke-width="2"/>
+              </g>
+            </defs>
+            <rect x="2" y="14" width="396" height="100" rx="46" ry="50" fill="#161618" stroke="#9a9a9d" stroke-width="3"/>
+            <g clip-path="url(#dk)">
+              <rect x="20" y="30" width="360" height="74" fill="#7a2bd6" transform="rotate(-3 200 64)"/>
+              <path d="M14 76c8-16 16 6 24-8s14 10 20 0M342 52c8-14 14 6 22-6s12 8 18 0" fill="none" stroke="#e8e2d4" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g stroke="#7a2bd6" stroke-width="4" stroke-linecap="round">
+              <path d="M78 102v14"/><path d="M156 104v9"/><path d="M262 100v16"/><path d="M336 97v11"/>
+            </g>
+            <use href="#trk"/><use href="#trk" x="210"/>
+            <g fill="#d9d4c7" stroke="#0b0b0c" stroke-width="2">
+              <rect x="78" y="2" width="34" height="22" rx="10"/><rect x="78" y="104" width="34" height="22" rx="10"/>
+              <rect x="288" y="2" width="34" height="22" rx="10"/><rect x="288" y="104" width="34" height="22" rx="10"/>
+            </g>
+            <g font-family="Impact,'Arial Black','Roboto Black',sans-serif" font-weight="900" text-anchor="middle" transform="rotate(-3 200 64)" fill="#e8e2d4" stroke="#0b0b0c" stroke-width="6" paint-order="stroke" stroke-linejoin="round">
+              <text x="200" y="62" font-size="34" textLength="300" lengthAdjust="spacingAndGlyphs">GÖRDÜĞÜN HER</text>
+              <text x="200" y="98" font-size="34" textLength="300" lengthAdjust="spacingAndGlyphs">LİNKE TIKLAMA!</text>
+            </g>
+          </svg>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="fog"></div>
+
+    <div class="msgs">
+      <p class="warning paper">Şuan dolandırılmış olabilirdin neyseki ben avukatlarda çok korkuyorum o yüzden iyisin köfte</p>
+      <button id="goBtn" class="sticker-btn" type="button">DEVAM ET.</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ANA SAYFA ================= -->
+<main id="site">
+
+  <!-- DUVAR 1 -->
+  <section class="wall hero">
+    <div class="roller" style="left:-8%;top:3%;width:80%;height:330px;--r:-1.5deg"></div>
+    <div class="roller" style="right:-10%;top:55%;width:55%;height:260px;--r:2deg"></div>
+    <span class="oldtag" style="--r:-12deg;top:1%;left:-6%">NCWT</span>
+    <span class="oldtag pp" style="--r:8deg;top:44%;right:-14%;font-size:34vw">97</span>
+    <span class="oldtag" style="--r:-5deg;bottom:3%;left:6%;font-size:16vw">DA CHEFF</span>
+
+    <div class="col">
+      <h2 class="title">
+        <span class="w1 slap" style="--d:.1s"><b>GÖRDÜĞÜN</b><i class="drip" style="--x:18%;--h:30px"></i><i class="drip" style="--x:64%;--h:20px"></i></span>
+        <span class="w2 slap" style="--d:.25s"><b>HER LİNKE</b><i class="drip" style="--x:30%;--h:34px;--c:#e8e2d4"></i></span>
+        <span class="w3 slap" style="--d:.4s"><b>TIKLAMA.</b><i class="drip" style="--x:78%;--h:26px"></i></span>
+      </h2>
+
+      <p class="strip paper slap" style="--r:-1.4deg;--d:.6s">Fazla merak kötüdür demeyecem bence değildir ama den yine de internette her şeye tıklama</p>
+
+      <svg class="doodle slap" viewBox="0 0 180 56" style="--r:-7deg;--d:.7s" aria-hidden="true">
+        <g fill="none" stroke="#e8e2d4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)">
+          <path d="M8 10Q14 24 30 24H150Q166 24 172 10"/>
+          <path d="M46 24v6M134 24v6"/>
+          <circle cx="46" cy="40" r="8"/><circle cx="134" cy="40" r="8"/>
+          <path d="M2 36h14M0 44h10"/>
+        </g>
+      </svg>
+
+      <div class="collage">
+        <div class="vinyl slap" style="--r:14deg;--d:.95s"></div>
+
+        <div class="poster p2 slap" style="--r:5deg;--d:.8s">
+          <b>DA CHEFF</b><b>Hiphop Life</b><b>Valla yazacak bişi uok</b><b>sıkıldım</b>
+          <small>FOTOKOPİ · NO.04</small>
+        </div>
+
+        <div class="poster p1 slap" style="--r:-4deg;--d:.7s">
+          <div class="ph">NO<br><span>CLICK</span></div>
+          <div class="ht"></div>
+          <div class="pt">Canlı · 97<br>Arka sokak beton park<br>Giriş bedava<br>Saat: sen gelince</div>
+        </div>
+
+        <div class="round slap" style="--r:12deg;--d:1.1s">!!!!<br>???</div>
+
+        <div class="tape slap" style="--r:-7deg;--d:1s">
+          <div class="lbl">MİX '97<br> ORTA DOĞULU ŞÜKRÜ</div>
+          <div class="win"><i></i><i></i></div>
+        </div>
+
+        <div class="nametag slap" style="--r:-5deg;--d:1.2s">
+          <em>Selamın Aleyküm<br></em><strong>DA CHEFF</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUVAR 2: NOT DUVARI -->
+  <section class="wall note">
+    <span class="oldtag pp" style="--r:-8deg;top:6%;right:-10%">SK8</span>
+    <span class="oldtag" style="--r:6deg;bottom:2%;left:-8%;font-size:26vw">NCWT</span>
+
+    <div class="col">
+      <h2 class="wtitle">
+        <span class="slap" style="--d:.1s"><b>DUVAR SENİN</b></span>
+        <span class="slap" style="--d:.25s"><b>SPREY SENİN.</b></span>
+      </h2>
+
+      <p class="ex">Anonimsin, kim olduğunu bilemem. İstersen buraya içini dök ya da istediğini yaz. Eğer üşenmezsem okurum bir ara. bir yerde içerik malzemesi de yapılmayacaksın tamamen keyfi sadece ben görecem</p>
+
+      <form id="noteForm" novalidate>
+        <div class="patch">
+          <label for="noteInput" class="sr">Duvara yazmak istediğin şey</label>
+          <textarea id="noteInput" maxlength="500" rows="6" placeholder="Duvara yazmak istediğin şey..." spellcheck="false" autocomplete="off"></textarea>
+          <span class="cnt" id="count">0/500</span>
+        </div>
+        <button id="sendBtn" class="sticker-btn" type="submit">DUVAR TAMAMDIR</button>
+      </form>
+
+      <p id="status" role="status" aria-live="polite"></p>
+
+      <div id="confirm" class="paper" hidden>
+        <p class="cp">SON ADIM: Aşağıdaki Tally kutusunda gönder tuşuna bas. Basmazsan notun duvara yapışmaz.</p>
+        <iframe id="tallyFrame" title="Notu duvara gönder"></iframe>
+        <button id="backBtn" type="button">← notu düzelt</button>
+      </div>
+
+      <div id="done" aria-live="polite">
+        <p id="m1"></p>
+        <p id="m2"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">duvar kimsenin değil · arka sokak · 1997</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
